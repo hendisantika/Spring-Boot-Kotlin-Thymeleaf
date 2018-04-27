@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Spring with Spring Boot, Spring MVC, and Kotlin</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+
+<div th:if="${student != null}">
+    <h2>Student Details</h2>
+    <table>
+        <tr>
+            <td>STUDENT ID:</td>
+            <td th:text="${student.studentId}"></td>
+        </tr>
+        <tr>
+            <td>NAME:</td>
+            <td th:text="${student.firstName + ' ' + student.lastName}"></td>
+        </tr>
+    </table>
+</div>
+<div th:if="${student == null}">
+    <h2>Student Details not found</h2>
+</div>
+</body>
+</html>
