@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Spring with Spring Boot, Spring MVC, and Kotlin</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+
+<div th:if="${not #lists.isEmpty(students)}">
+    <h2>List of Students</h2>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+        <tr th:each="s : ${students}">
+            <td th:text="${s.studentId}"></td>
+            <td th:text="${s.firstName + ' ' + s.lastName}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
