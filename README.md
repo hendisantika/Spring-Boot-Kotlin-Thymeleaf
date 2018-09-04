@@ -27,4 +27,4 @@ Student Details Page
 
 List Student Page
 
-![List Students Page](img/list.pnp "List Students Page")
+![List Students Page](img/list.png "List Students Page")
