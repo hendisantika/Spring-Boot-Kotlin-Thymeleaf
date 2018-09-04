@@ -19,7 +19,11 @@ class StudentServiceImpl : StudentService {
     // This represents your database or any data source
     val studentList: MutableList<Student> = mutableListOf(
             Student(studentId = "1", lastName = "Naruto", firstName = "Uzumaki"),
-            Student(studentId = "2", lastName = "Sasuke", firstName = "Uchiha"))
+            Student(studentId = "2", lastName = "Sasuke", firstName = "Uchiha"),
+            Student(studentId = "3", lastName = "Sakura", firstName = "Haruno"),
+            Student(studentId = "4", lastName = "Kakashi", firstName = "Hatake"),
+            Student(studentId = "5", lastName = "Neji", firstName = "Hyuga"),
+            Student(studentId = "6", lastName = "Ino", firstName = "Yamanaka"))
 
     override fun getStudents(): List<Student> {
         return studentList
