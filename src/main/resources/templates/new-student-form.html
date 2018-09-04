@@ -12,8 +12,8 @@
 
     <form th:object="${studentForm}" th:action="@{/student}" method="post">
         Student ID:<input type="text" th:field="*{studentId}"/><br/>
-        Last Name:<input type="text" th:field="*{lastName}"/><br/>
         First Name:<input type="text" th:field="*{firstName}"/><br/>
+        Last Name:<input type="text" th:field="*{lastName}"/><br/>
         <button type="submit">Submit</button>
     </form>
 </div>
