@@ -6,9 +6,9 @@ import com.hendisantika.kotlin.thymeleaf.service.StudentService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestMethod
+import org.springframework.web.bind.annotation.PostMapping
 
 /**
  * Created by IntelliJ IDEA.
@@ -26,19 +26,19 @@ class StudentController {
     @Autowired
     lateinit var studentService: StudentService
 
-    @RequestMapping("/students")
+    @GetMapping("/students")
     fun listStudents(model: Model): String {
         model.addAttribute("students", studentService.getStudents())
         return "students"
     }
 
-    @RequestMapping("/student/{studentId}")
+    @GetMapping("/student/{studentId}")
     fun findStudent(@PathVariable("studentId") sId: String, model: Model): String {
         model.addAttribute("student", studentService.findStudentById(sId))
         return "student"
     }
 
-    @RequestMapping(value = "/student", method = arrayOf(RequestMethod.POST))
+    @PostMapping("/student")
     fun addStudent(createStudentForm: CreateStudentForm, model: Model): String {
 
         studentService.createStudent(Student(
@@ -49,7 +49,7 @@ class StudentController {
         return "redirect:/student/" + createStudentForm.studentId
     }
 
-    @RequestMapping(value = "/student")
+    @GetMapping("/student")
     fun createStudentPage(model: Model): String {
         model.addAttribute("studentForm", CreateStudentForm())
         return "new-student-form"

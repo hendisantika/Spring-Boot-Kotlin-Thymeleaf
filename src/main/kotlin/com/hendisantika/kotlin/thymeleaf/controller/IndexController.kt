@@ -1,7 +1,7 @@
 package com.hendisantika.kotlin.thymeleaf.controller
 
 import org.springframework.stereotype.Controller
-import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.GetMapping
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 @Controller
 class IndexController {
 
-    @RequestMapping("/")
+    @GetMapping("/")
     fun index(): String {
         return "index"
     }
